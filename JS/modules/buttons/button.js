@@ -1,4 +1,5 @@
 const buttons = () => {
+  const nav = document.querySelector('.nav');
   const btnScroll = document.querySelector('.btn--scroll-to');
   const section = document.querySelector('#section--1');
 
@@ -40,6 +41,24 @@ const buttons = () => {
     //--------------New---------------
     section.scrollIntoView({ behavior: 'smooth' });
   });
+
+  //--------------nav animation----------
+
+  const handleAnimation = (e, opacity) => {
+    if (e.target.classList.contains('nav__link')) {
+      const linkOver = e.target;
+      const sibLink = linkOver
+        .closest('.nav__links')
+        .querySelectorAll('.nav__link');
+
+      sibLink.forEach(element => {
+        if (element !== linkOver) element.style.opacity = opacity;
+      });
+    }
+  };
+
+  nav.addEventListener('mouseover', e => handleAnimation(e, 0.4));
+  nav.addEventListener('mouseout', e => handleAnimation(e, 1));
 };
 
 export default buttons;

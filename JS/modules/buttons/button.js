@@ -12,7 +12,6 @@ const buttons = () => {
 
       document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
     }
-    console.log(e.target);
   });
 
   //--------------Old---------------

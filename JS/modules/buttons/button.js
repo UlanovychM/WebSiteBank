@@ -1,7 +1,8 @@
+export const section = document.querySelector('#section--1');
+export const nav = document.querySelector('.nav');
+
 const buttons = () => {
-  const nav = document.querySelector('.nav');
   const btnScroll = document.querySelector('.btn--scroll-to');
-  const section = document.querySelector('#section--1');
 
   //--------------New---------------
   const navLinks = document.querySelector('.nav__links');

@@ -1,4 +1,5 @@
-import { section, nav } from '../buttons/button';
+import { nav } from '../buttons/button';
+// import { section, nav } from '../buttons/button';
 
 const navigation = () => {
   //-------------OLD------------
@@ -23,12 +24,32 @@ const navigation = () => {
     }
   };
 
-  const observer = new IntersectionObserver(getStickyNav, {
+  const headerObserver = new IntersectionObserver(getStickyNav, {
     root: null,
     threshold: 0,
     rootMargin: `${-navHeight}px`,
   });
-  observer.observe(header);
+  headerObserver.observe(header);
+
+  //---------Section observer----------
+  const allSection = document.querySelectorAll('.section');
+
+  const getSectionObserver = (entries, observer) => {
+    const entry = entries[0];
+    if (!entry.isIntersecting) return;
+
+    entry.target.classList.remove('section--hidden');
+    observer.unobserve(entry.target);
+  };
+  const sectionObserver = new IntersectionObserver(getSectionObserver, {
+    root: null,
+    threshold: 0.2,
+  });
+
+  allSection.forEach(section => {
+    sectionObserver.observe(section);
+    section.classList.add('section--hidden');
+  });
 };
 
 export default navigation;

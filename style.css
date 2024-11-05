@@ -32,7 +32,7 @@ body {
   background-color: #f0f0f0;
 }
 
-/* Основные элементы */
+/* Section */
 .section {
   padding: 15rem 3rem;
   border-top: 1px solid rgb(213, 213, 213);
@@ -111,7 +111,7 @@ img {
   filter: blur(20px);
 }
 
-/* Панель навигации */
+/* Navigation*/
 .nav {
   display: flex;
   justify-content: space-between;
@@ -234,7 +234,7 @@ h4 {
   background-image: var(--gradient-first);
 }
 
-/* Услуги */
+/* Services */
 .services {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -275,7 +275,7 @@ h4 {
   margin-bottom: 1rem;
 }
 
-/* Операции */
+/* Operations */
 .operations {
   max-width: 100rem;
   margin: 12rem auto 0 auto;
@@ -377,21 +377,7 @@ h4 {
   fill: var(--color-third);
 }
 
-/* Слайдер */
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
+/* Slider */
 
 .slider {
   max-width: 100rem;
@@ -478,7 +464,7 @@ h4 {
   opacity: 1;
 }
 
-/* Отзывы */
+/* Review */
 .review {
   width: 65%;
   position: relative;
@@ -538,7 +524,7 @@ h4 {
   margin-bottom: 4rem;
 }
 
-/* Регистрация */
+/* Sign up */
 .section--sign-up {
   background-color: #37383d;
   border-top: none;

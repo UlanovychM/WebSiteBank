@@ -28,7 +28,8 @@ jobs:
             --env GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
             --env GITHUB_PR_NUMBER=${{ github.event.pull_request.number }} \
             --env GITHUB_REPOSITORY=${{ github.repository }} \
-            --env GITHUB_BASE_REF=${{ github.base_ref }} \
-            --env GITHUB_HEAD_REF=${{ github.head_ref }} \
+           \
             $IMAGE_NAME \
-            --repo-path "." --base-ref "origin/${{ github.base_ref }}" --head-ref "${{ github.head_ref }}"
+            --repo-path "." \
+            --base-ref "${{ github.event.pull_request.base.sha }}" \
+            --head-ref "${{ github.event.pull_request.head.sha }}"

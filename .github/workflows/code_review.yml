@@ -32,4 +32,6 @@ jobs:
             --env GITHUB_HEAD_REF=${{ github.event.pull_request.head.ref }} \
             --env BITBUCKET_COMMIT=${{ github.event.pull_request.head.sha }} \
             $IMAGE_NAME \
-            --repo-path "." --base-ref "${{ github.event.pull_request.base.ref }}" --head-ref "${{ github.event.pull_request.head.sha }}"
+            --repo-path "." \
+            --base-ref "origin/${{ github.event.pull_request.base.ref }}" \
+            --head-ref "${{ github.event.pull_request.head.sha }}"
